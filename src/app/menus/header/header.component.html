@@ -1,0 +1,31 @@
+<nav [ngStyle]="{'background-color': backColor}" class="navbar navbar-expand-lg navbar-light">
+
+  <a class="navbar-brand" [routerLink]="['/home']">
+    <img src="../../../assets/img/Gutov logo_large.png" style="width: 120px;" />
+  </a>
+
+  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="navbarCollapsed = !navbarCollapsed"
+    [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarContent" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse ml-5 pl-5">
+    <ul class="nav nav-tabs mr-auto ">
+      <li routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/home']">Home </a>
+      </li>
+      <li routerLinkActive="active_route">
+        <a class="nav-link" [routerLink]="['/contact']">Contact me</a>
+      </li>
+      <li routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/users']">Users</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+
+</nav>

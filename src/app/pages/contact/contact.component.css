@@ -1,0 +1,11 @@
+.asterisk:after {
+  content: "*";
+  color: red;
+}
+
+.my-contactForm {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 30px;
+  background-color: lightskyblue;
+}
