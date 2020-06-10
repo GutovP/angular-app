@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   @Input()
 
-  backColor: string;
+  backColor = '#c1def3';
 
   navbarCollapsed = true;
 

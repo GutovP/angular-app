@@ -23,7 +23,7 @@ import { ServiceModule } from './services/service.module';
     NgbModule,
     AppRoutingModule,
     MenusSharedModule,
-    ServiceModule/* .forRoot()<-uncomment if you use the static method in service.module*/,
+    ServiceModule/*.forRoot()<-uncomment if you use the static method in service.module*/,
   ],
   providers: [],
   bootstrap: [AppComponent]

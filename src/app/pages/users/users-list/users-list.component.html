@@ -1,12 +1,16 @@
 <app-header [backColor]="'#ec4cec'"></app-header>
 
-<h2 class="text-center">Hello from userlistcomponent</h2>
+<div class="text-center">
+  <h2>Hello from userlistcomponent</h2>
+
+  <br>
+  <h3 *ngFor=" let user of users">
+    <app-user [user]="user"></app-user>
+  </h3>
 
 
-<h3 *ngFor=" let user of users">
-  <app-user [user]="user"></app-user>
-</h3>
+  <input type="text" #i>
 
-<input type="text" #i>
+  <button (click)="addUser(i.value)">Add User</button>
 
-<button (click)="addUser(i.value)">Add User</button>
+</div>

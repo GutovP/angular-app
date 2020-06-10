@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users/users.service';
+import { NgForm } from '@angular/forms';
+
 
 
 @Component({
@@ -10,17 +12,24 @@ import { UsersService } from 'src/app/services/users/users.service';
 })
 export class UsersListComponent implements OnInit {
 
-  users: any;
+
+
   constructor(private usersService: UsersService) { }
+
+  users: any;
 
   ngOnInit(): void {
 
     this.users = this.usersService.getAll();
   }
 
-  addUser(name: any) {
+  addUser(name: string) {
     const id = this.users.length + 1;
 
     this.usersService.addUser({ id, name });
+
+
   }
+
 }
+
