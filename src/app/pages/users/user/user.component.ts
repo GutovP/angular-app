@@ -9,8 +9,9 @@ export class UserComponent implements OnInit {
 
   @Input()
   user: {
-    id: number;
-    name: string;
+    id: number,
+    name: string,
+    age: number,
   };
   constructor() { }
 

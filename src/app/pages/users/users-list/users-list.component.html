@@ -5,12 +5,17 @@
 
   <br>
   <h3 *ngFor=" let user of users">
-    <app-user [user]="user"></app-user>
+    <a [routerLink]="[ '/users', user.id ]">{{user.id}} : {{user.name}} {{user.age}}</a>
   </h3>
 
+  <br>
+  <br>
+  <input type="text" #n> <input type="number" #a size="3" min="1" max="80">
 
-  <input type="text" #i>
+  <button (click)="addUser(n.value,a.value)">Add User</button>
+  <br>
+  <br>
 
-  <button (click)="addUser(i.value)">Add User</button>
-
+  <!-- ? nullable check. if the user is null, it wont throw exception -->
+  <h2>[ACTIVE USER]: {{activeUser?.name}} {{activeUser?.age}}</h2>
 </div>

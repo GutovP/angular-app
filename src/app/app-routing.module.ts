@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { CustomPreloadingService } from './services/custom-preloading/custom-preloading.service';
 
 
 const routes: Routes = [
@@ -10,16 +12,16 @@ const routes: Routes = [
   },
   { path: 'home', redirectTo: '', pathMatch: 'full' },
   {
-    path: 'contact',
+    path: 'contact', data: { preload: true }, // <- set to false if you dont want to be preloaded.
     loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule)
-  },
-  {
-    path: 'legal',
-    loadChildren: () => import('./pages/legal-notice/legal-notice.module').then(m => m.LegalNoticeModule)
   },
   {
     path: 'users',
     loadChildren: () => import('./pages/users/users.module').then(m => m.UsersModule)
+  },
+  {
+    path: 'legal',
+    loadChildren: () => import('./pages/legal-notice/legal-notice.module').then(m => m.LegalNoticeModule)
   },
 
 
@@ -29,7 +31,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: CustomPreloadingService })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

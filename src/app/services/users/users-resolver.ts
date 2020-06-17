@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Resolve } from '@angular/router';
+import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+
+import { UsersService } from './users.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersResolver implements Resolve<any>{
 
-  constructor() { }
-  resolve(route: import("@angular/router").ActivatedRouteSnapshot, state: import("@angular/router").RouterStateSnapshot) {
-    throw new Error("Method not implemented.");
+  constructor(private usersService: UsersService) { }
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+
+    return this.usersService.getAllUsers();
   }
 }

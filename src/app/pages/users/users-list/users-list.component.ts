@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { UsersService } from 'src/app/services/users/users.service';
-import { NgForm } from '@angular/forms';
+
 
 
 
@@ -11,22 +13,33 @@ import { NgForm } from '@angular/forms';
 
 })
 export class UsersListComponent implements OnInit {
-
-
-
-  constructor(private usersService: UsersService) { }
-
   users: any;
+
+  constructor(private usersService: UsersService, private activatedRoute: ActivatedRoute) { }
+
+
+
+  activeUser: { id: number; name: string; age: number; };
 
   ngOnInit(): void {
 
-    this.users = this.usersService.getAll();
+    // this.users = this.activatedRoute.snapshot.data.users;
+    this.users = this.usersService.getAllUsers();
+    /* .then(users => this.users = users) */
+
+    this.activatedRoute.params.subscribe(params => {
+
+      const id = +params.id;
+
+      this.activeUser = this.usersService.getUserById(id);
+    });
+
   }
 
-  addUser(name: string) {
+  addUser(name: string, age: number) {
     const id = this.users.length + 1;
 
-    this.usersService.addUser({ id, name });
+    this.usersService.addUser({ id, name, age });
 
 
   }
