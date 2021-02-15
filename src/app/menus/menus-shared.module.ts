@@ -23,7 +23,8 @@ import { MaterialModule } from '../material/material.module';
     CommonModule,
     FormsModule,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NgbModule
   ],
   /* schemas: [CUSTOM_ELEMENTS_SCHEMA] */
 })

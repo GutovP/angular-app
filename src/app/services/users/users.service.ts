@@ -1,23 +1,26 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
+import { Observable } from 'rxjs';
+
+
+
+@Injectable()
 export class UsersService {
 
-  users = [
+  users: any = [
     { id: 1, name: 'Steven', age: 40 },
     { id: 2, name: 'Viktor', age: 35 },
     { id: 3, name: 'Karina', age: 10 },
     { id: 4, name: 'Vanessa', age: 6 }
-
   ];
-  constructor() { }
 
+  /*  private uri = 'assets/data/users.json'; */
+  /* constructor(private httpClient: HttpClient) { }
+ */
   getAllUsers() {
     return this.users;
 
-    /*   new Promise(res => {
-        setTimeout(() => {
-          res(this.users);
-        }, 0);
-      }); */
 
   }
   addUser(user: { id: number, name: string, age: number }) {
@@ -26,6 +29,6 @@ export class UsersService {
 
   getUserById(id: number) {
 
-    return this.users.find(x => x.id === id);
+    return this.users.find((x: { id: number; }) => x.id === id);
   }
 }

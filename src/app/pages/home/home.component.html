@@ -2,5 +2,19 @@
 <h1 class="text-center">
   Home
 </h1>
+<br>
+<br>
+<img src="../../../assets/img/In case of fire.jpg" class="home-img">
 
-<img src="../../../assets/img/In case of fire.jpg" alt="" sizes="150px" srcset="">
+
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+  <li ngbNavItem>
+    <a ngbNavLink>First</a>
+    <ng-template ngbNavContent>First content</ng-template>
+  </li>
+  <li ngbNavItem>
+    <a ngbNavLink>Second</a>
+    <ng-template ngbNavContent>Second content</ng-template>
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div>

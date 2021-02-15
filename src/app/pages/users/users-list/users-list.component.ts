@@ -6,6 +6,8 @@ import { UsersService } from 'src/app/services/users/users.service';
 
 
 
+
+
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
@@ -24,8 +26,7 @@ export class UsersListComponent implements OnInit {
   ngOnInit(): void {
 
     // this.users = this.activatedRoute.snapshot.data.users;
-    this.users = this.usersService.getAllUsers();
-    /* .then(users => this.users = users) */
+    this.users = this.usersService.getAllUsers()/* .subscribe(users => this.users = users) */;
 
     this.activatedRoute.params.subscribe(params => {
 
