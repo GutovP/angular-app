@@ -1,0 +1,12 @@
+<div class="text-left">
+  <div *ngIf="pokemons" class="my-padding">
+    <div
+      *ngFor="let list of (pokemons.results | paginate: { itemsPerPage: 25, currentPage: page, totalItems: totalPages} )">
+      <a [routerLink]="['/restApi', list.name]">{{ list.name | titlecase }}</a>
+    </div>
+  </div>
+  <div class="pt-2">
+    <pagination-controls (pageChange)="getAll()" previousLabel="" nextLabel="" maxSize="5" class="my-pagination">
+    </pagination-controls>
+  </div>
+</div>

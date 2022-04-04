@@ -1,0 +1,13 @@
+.my-padding {
+  padding-left: 1%;
+}
+
+/* /deep/ To overcome Angular's view encapsulation */
+
+.my-pagination /deep/ .ngx-pagination .current {
+  background: black;
+}
+
+.my-pagination /deep/ .ngx-pagination {
+  padding-left: 0px !important;
+}

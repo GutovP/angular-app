@@ -8,24 +8,22 @@ import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '../material/material.module';
 
-
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    FooterComponent],
+  declarations: [HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
     MenusSharedRoutingModule,
     NgbModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
   ],
   exports: [
     CommonModule,
     FormsModule,
     HeaderComponent,
     FooterComponent,
-    NgbModule
+    NgbModule,
   ],
   /* schemas: [CUSTOM_ELEMENTS_SCHEMA] */
 })
-export class MenusSharedModule { }
+export class MenusSharedModule {}

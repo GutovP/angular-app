@@ -1,3 +1,15 @@
-<app-footer></app-footer>
+<app-header></app-header>
+<main>
+  <section>
+    <div *ngIf="router.url.includes('/restApi/')" class="sidenav">
+      <app-pokemons-list></app-pokemons-list>
+    </div>
+    <div class="main">
 
-<router-outlet></router-outlet>
+      <router-outlet></router-outlet>
+
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>

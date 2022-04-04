@@ -8,24 +8,22 @@ import { AppComponent } from './app.component';
 import { MenusSharedModule } from './menus/menus-shared.module';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ServiceModule } from './services/service.module';
-
-
-
+import { PokemonsModule } from './pages/pokemons/pokemons.module';
+import { CookiesModule } from './cookies/cookies.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NotFoundComponent
-  ],
+  declarations: [AppComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     MenusSharedModule,
-    ServiceModule/*.forRoot()<-uncomment if you use the static method in service.module*/,
+    ServiceModule /*.forRoot()<-uncomment if you use the static method in service.module*/,
+    PokemonsModule,
+    CookiesModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

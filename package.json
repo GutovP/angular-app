@@ -27,6 +27,8 @@
     "@types/jquery": "^3.3.38",
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
+    "ngx-cookie-service": "^13.1.2",
+    "ngx-pagination": "^5.1.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

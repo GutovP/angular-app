@@ -1,7 +1,5 @@
-<app-header [backColor]="'#ec4cec'"></app-header>
-
 <div class="text-center">
-  <h2>Hello from userlistcomponent</h2>
+  <h2>Users</h2>
 
   <br>
   <h3 *ngFor=" let user of users">
@@ -17,5 +15,5 @@
   <br>
 
   <!-- ? nullable check. if the user is null, it wont throw exception -->
-  <h2>[ACTIVE USER]: {{activeUser?.name}} {{activeUser?.age}}</h2>
+  <h2>ACTIVE USER: {{activeUser?.name}} {{activeUser?.age}}</h2>
 </div>
