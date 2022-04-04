@@ -2,12 +2,12 @@
   padding-left: 1%;
 }
 
-/* /deep/ To overcome Angular's view encapsulation */
+/* ::ng-deep To overcome Angular's view encapsulation */
 
-.my-pagination /deep/ .ngx-pagination .current {
+.my-pagination ::ng-deep .ngx-pagination .current {
   background: black;
 }
 
-.my-pagination /deep/ .ngx-pagination {
+.my-pagination ::ng-deep .ngx-pagination {
   padding-left: 0px !important;
 }
