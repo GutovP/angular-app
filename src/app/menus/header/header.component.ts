@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
-import { SearchService } from 'src/app/services/search/search.service';
 import { CustomPreloadingService } from '../../services/custom-preloading/custom-preloading.service';
 
 class MenuItem {
@@ -21,14 +20,11 @@ class MenuItem {
 export class HeaderComponent implements OnInit {
   public navbarCollapsed = true;
   menuItems: MenuItem[];
-  results: Object;
+  accountItems: MenuItem[];
+
   searchTerm$ = new Subject<string>();
 
-  constructor(public router: Router, private searchService: SearchService) {
-    // this.searchService.search(this.results).subscribe((results) => {
-    //   this.results = results;
-    // });
-  }
+  constructor(public router: Router) {}
 
   ngOnInit(): void {
     this.menuItems = [
@@ -36,6 +32,10 @@ export class HeaderComponent implements OnInit {
       { caption: 'Contact', path: 'contact', link: ['/contact'] },
       { caption: 'Users', path: 'users', link: ['/users'] },
       { caption: 'Rest-Api', path: 'restApi', link: ['/restApi'] },
+    ];
+    this.accountItems = [
+      { caption: 'Login', path: 'login', link: ['/login'] },
+      { caption: 'Register', path: 'register', link: ['/register'] },
     ];
   }
 }

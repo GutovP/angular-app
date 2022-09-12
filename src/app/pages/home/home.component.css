@@ -1,3 +1,7 @@
+.home-img {
+  max-width: 15%;
+  margin-right: 30px;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -17,19 +21,13 @@
 #third {
   animation-delay: 4s;
 }
-#fourth {
-  animation-delay: 6s;
-}
-#fifth {
-  animation-delay: 8s;
-}
-
-.home-img {
-  max-width: 10%;
-}
 h1,
 h3,
 h4 {
   font-family: poppins;
   font-weight: 600;
+}
+
+.myAngular {
+  text-decoration: underline red;
 }

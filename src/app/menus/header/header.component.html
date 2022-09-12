@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary ">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
 
   <a class="navbar-brand" [routerLink]="['/home']">
     <img src="../../../assets/img/Gutov logo_large.png" style="width: 120px;" />
@@ -11,29 +11,29 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarToggler">
-    <ul class="mr-auto">
-      <li class="navbar-nav">
+    <ul class="">
+      <li class="navbar-nav ">
         <a *ngFor="let item of menuItems" [routerLink]="item.link" class="nav-link text-white"
           routerLinkActive="router-link-active" #rla="routerLinkActive" href="" data-toggle="collapse"
           data-target=".navbar-collapse.show">{{ item.caption }}
           {{ rla.isActive ? '*' : '' }}</a>
       </li>
     </ul>
-    <div *ngIf="router.url.includes('/restApi')">
+    <ul class="ml-auto">
+      <li class="navbar-nav ">
+        <a *ngFor="let item of accountItems" [routerLink]="item.link" class="nav-link text-white"
+          routerLinkActive="router-link-active" #rla="routerLinkActive" href="" data-toggle="collapse"
+          data-target=".navbar-collapse.show">{{ item.caption }}
+          {{ rla.isActive ? '*' : '' }}</a>
+      </li>
+    </ul>
+    <!-- <div *ngIf="router.url.includes('/restApi')">
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
           (keyup)="searchTerm$.next($event.target.value)">
-        <!-- <ul *ngIf="results">
-          <li *ngFor="let result of results | slice:0:9">
-            <a href="{{ result.latest }}" target="_blank">
-              {{ result.name }}
-            </a>
-          </li>
-        </ul> -->
-
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
-    </div>
+    </div> -->
   </div>
 
 </nav>

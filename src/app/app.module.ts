@@ -10,6 +10,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ServiceModule } from './services/service.module';
 import { PokemonsModule } from './pages/pokemons/pokemons.module';
 import { CookiesModule } from './cookies/cookies.module';
+import { FilterTextModule } from './filter-text/filter-text.module';
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
@@ -22,6 +23,7 @@ import { CookiesModule } from './cookies/cookies.module';
     ServiceModule /*.forRoot()<-uncomment if you use the static method in service.module*/,
     PokemonsModule,
     CookiesModule,
+    FilterTextModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

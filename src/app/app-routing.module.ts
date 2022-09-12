@@ -35,6 +35,18 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/pokemons/pokemons.module').then((m) => m.PokemonsModule),
   },
+  {
+    path: 'register',
+    loadChildren: () =>
+      import('./account/register/register.module').then(
+        (m) => m.RegisterModule
+      ),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./account/login/login.module').then((m) => m.LoginModule),
+  },
 
   // path:'**' must be declared last
   { path: '404', component: NotFoundComponent },
@@ -44,9 +56,9 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-    preloadingStrategy: CustomPreloadingService,
-    relativeLinkResolution: 'legacy'
-}),
+      preloadingStrategy: CustomPreloadingService,
+      relativeLinkResolution: 'legacy',
+    }),
   ],
   exports: [RouterModule],
 })

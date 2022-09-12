@@ -11,3 +11,6 @@
 .my-pagination ::ng-deep .ngx-pagination {
   padding-left: 0px !important;
 }
+.myPokeapi {
+  text-decoration: underline red;
+}
